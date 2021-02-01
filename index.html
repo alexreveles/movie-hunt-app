@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="./assets/styles.css" rel="stylesheet">
     <title>Movie Hunt App</title>
 
@@ -11,21 +13,43 @@
 
 <body>
     <header>
-      <div>
      
-        <h1>Movie Hunt</h1>
-        <h2>Hunting for a Movie?</h2>
-        <p>This application was designed to help users make movie hunting easier.
+     <div id="container-title">
+    
+        <img src="assets/movie-projector.html" width="200" height="200" alt="projector1" >
+        <h1 id="title">Movie Hunt</h1>  
+       <img src="assets/movie-picture.html" width="200" height="200" alt="picture">       
+     </div>
+     
+    <div class="container-header">
+      
+        <div id="user-form">
+        
+            <label class="form-label" class="search-movie"></label>
+            <input name="searchMovie" id="search-movie" type="text" autofocus="true" class="movieAdder"
+                placeholder="Looking for a Movie?" required>
+            <button id="search-movie-btn" class="btn"><i class="fa fa-search"></i></button>
+        
+        </div>
+        
+       
+       
+       
+       
+        <div id="container-about-us">
+      
+      <!---- <h2>Hunting for a Movie?</h2>-->
+
+      <h2>About Application</h2>
+      <p>This application was designed to help users make movie hunting easier.
              With the search of a title of interest, users are able to quickly view the popularity, rating, and review. </p>
    
        </div>
      
-       <div id="user-form">
-        <label class="form-label" class="search-movie"></label>
-        <input name="searchMovie" id="seach-movie" type="text" autofocus="true" class="movieAdder"
-            placeholder="Looking for a Movie?" required>
-        <button id="search-movie-btn" class="btn"><i></i></button>
-
+      
+      
+      
+    
         </div>
    
     </header>

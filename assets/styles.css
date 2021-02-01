@@ -23,6 +23,7 @@ p{
     justify-content: center;
     gap: 50px;
     background-color: #20B2AA;
+    padding: 20px;
 }
 #search-movie{
     width: 70%;

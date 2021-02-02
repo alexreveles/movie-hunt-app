@@ -17,6 +17,8 @@ $(document).ready(function () {
        // currentMovie.appendChild(movieTitle)
 
         getMovieTitle(movieTitle.textContent)
+        saveMovieTitle(movieTitle.textContent)
+        
 
     });
 
@@ -57,9 +59,31 @@ $(document).ready(function () {
             myMovieGenre.id = 'div-movie-genre'
             currentMovie.appendChild(myMovieGenre)
 
+            ///created another fetch call to display movie review from NY times API
+
+            fetch(
+                `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${search}&api-key=${nyTimesApiKey}`
+              )
+                .then(function(response) {
+                  return response.json();
+                })
+                .then(function(data) {
+                  console.log(data); //.results[0].link
+       
+                  let movieReview = document.createElement('a');
+                  movieReview.textContent = `Movie Review from NY Times: ${data.results[0].link.url}`;
+                  movieReview.id = 'div-movie-review';
+                  movieReview.setAttribute('href', `${data.results[0].link.url}`);
+                  currentMovie.appendChild(movieReview);
+                });
+
             
         })
     }
 
-    
+    ////function to save movie titles to local storage, to be updated later
+    let saveMovieTitle = function (search) {
+        localStorage.setItem(search, []);
+    }
+   
 })

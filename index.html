@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="./assets/styles.css" rel="stylesheet">
-    <title>Movie Hunt App</title>
+    <title id="movie-start">Movie Hunt App</title>
 
 </head>
 
@@ -14,12 +15,21 @@
 <body>
     <header>
      
-     <div id="container-title">
+     <!-- <div id="container-title">
     
         <img src="assets/movie-projector.html" width="200" height="200" alt="projector1" >
         <h1 id="title">Movie Hunt</h1>  
        <img src="assets/movie-picture.html" width="200" height="200" alt="picture">       
-     </div>
+     </div> -->
+
+     <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">Movie Hunt App</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="./second.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
      
     <div class="container-header">
       
@@ -36,23 +46,23 @@
        
        
        
-        <div id="container-about-us">
+        <!-- <div id="container-about-us"> -->
       
       <!---- <h2>Hunting for a Movie?</h2>-->
 
-      <h2>About Application</h2>
+      <!-- <h2>About Application</h2>
       <p>This application was designed to help users make movie hunting easier.
              With the search of a title of interest, users are able to quickly view the popularity, rating, and review. </p>
    
-       </div>
+       </div> -->
      
       
       
       
     
-        </div>
+    </div>
    
-    </header>
+</header>
    
    
    
@@ -85,6 +95,13 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/script.js"></script>
+
+    <footer>
+        <div class="bottom-section">
+          <a href="./second.html">Read Our About Me</a><br/>
+          &copy; 2021 Movie Hunt App, Inc.
+        </div>
+      </footer>
 </body>
-<footer>@copy 2021</footer>
+
 </html>

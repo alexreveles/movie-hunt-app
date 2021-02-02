@@ -1,36 +1,43 @@
+
 body{
-    background-color: rgb(80, 78, 78);
+    background-color: rgb(80, 78, 78);  
 }
-.container-header{
+/* .container-header{
     display: flex;
     justify-content: space-between;
     
-}
-#container-about-us{
+} */
+/* #container-about-us{
    
     width: 50%;
-}
-#title{
+} */
+/* #title{
     font-size: 100px;
     text-align: center;
     display: flex;
-}
+} */
 p{
     color: white;
 }
-#container-title{
+/* #container-title{
     display: flex;
     justify-content: center;
     gap: 50px;
     background-color: #20B2AA;
-    padding: 20px;
-}
-#search-movie{
-    width: 70%;
-    margin-left: 10px;
-    margin-top: 30px;
+    padding: 20px; */
+/* } */
+
+.nav-wrapper {
+    background-color:#20B2AA;
+    background-image: linear-gradient(rgba(11, 11, 36, 0.5), rgba(8, 191, 173, 0.5)),
+                  url("./images/movie.jpg");
+    
 }
 
-#div {
-    color: green;
+#search-movie{
+    width: 20%;
+    margin-left: 10px;
+    margin-top: 30px;
+    color: white;
 }
+

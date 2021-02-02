@@ -25,8 +25,12 @@ $(document).ready(function () {
         let movieTitle = document.createElement('p')
         movieTitle.textContent = searchResult
       
-        moviesArray.push(movieTitle.textContent)
+        moviesArray.push(searchResult) //movieTitle.textContent
         console.log(moviesArray)
+
+        let myMovieSearchHistory = document.createElement('li')
+        myMovieSearchHistory.textContent = searchResult
+        movieSearchHistory.appendChild(myMovieSearchHistory)
 
         getMovieTitle(movieTitle.textContent)
 
@@ -101,12 +105,13 @@ $(document).ready(function () {
 
     ////function to save movie titles to local storage, to be updated later
     let saveMovieTitle = function (search) {
-        localStorage.setItem('movieTitleKey', moviesArray);
+        localStorage.setItem('movieTitleKey', JSON.stringify(moviesArray));
     }
 
     let loadMovieTitle = function () {
-        let movieTitles = localStorage.getItem('movieTitleKey') //object.keys
-        return movieTitles
+        moviesArray = JSON.parse(localStorage.getItem('movieTitleKey')) || [] //object.keys
+
+       // return movieTitles
 
     }
 
@@ -114,12 +119,21 @@ $(document).ready(function () {
 
 
     let appendMovieHistory = function () {
-        let myMovieSearchHistory = document.createElement('li')
-        myMovieSearchHistory.textContent = loadMovieTitle()
-        movieSearchHistory.appendChild(myMovieSearchHistory)
+
+        for (let count = 0; count < moviesArray.length; count++) {
+
+            let myMovieSearchHistory = document.createElement('li')
+            myMovieSearchHistory.textContent = moviesArray[count]
+            movieSearchHistory.appendChild(myMovieSearchHistory)
+
+        }
+        //let myMovieSearchHistory = document.createElement('li')
+     //   myMovieSearchHistory.textContent = loadMovieTitle()
+      ///  movieSearchHistory.appendChild(myMovieSearchHistory)
 
     }
 
+    loadMovieTitle()
     appendMovieHistory()
 
     //let clearMovieHistory = function () {
@@ -127,9 +141,11 @@ $(document).ready(function () {
        // myMovieSearchHistory.textContent = ''
     //}
 
+
+    //let movieSearchHistory = document.querySelector(".movie-history-list")
     let clearMovieHistory = function () {
         localStorage.removeItem('movieTitleKey')
-       // myMovieSearchHistory.innerHTML = ''
+        movieSearchHistory.innerHTML = ''
     }
 
     clearHistory.addEventListener('click', clearMovieHistory)

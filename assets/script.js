@@ -7,6 +7,16 @@ $(document).ready(function () {
 
     let currentMovie = document.querySelector(".currentMovie")
 
+    let movieSearchHistory = document.querySelector(".movie-history-list")
+
+    let clearHistory = document.querySelector("#clear-history")
+
+    let myMovieSearchHistory
+
+    let moviesArray = [] //localStorage.getItem('movieTitleKey') ///[]
+    let test = localStorage.getItem('movieTitleKey')
+    moviesArray.push(test)
+
     ///add eventListener when user inputs a search
     searchMovieButton.addEventListener("click", function (e) {
         e.preventDefault()
@@ -14,13 +24,20 @@ $(document).ready(function () {
         
         let movieTitle = document.createElement('p')
         movieTitle.textContent = searchResult
-       // currentMovie.appendChild(movieTitle)
+      
+        moviesArray.push(movieTitle.textContent)
+        console.log(moviesArray)
 
         getMovieTitle(movieTitle.textContent)
+
         saveMovieTitle(movieTitle.textContent)
         
 
     });
+
+
+
+
 
     //retries the movie title based on the search, using omdb api
     let getMovieTitle = function (search) {
@@ -35,6 +52,7 @@ $(document).ready(function () {
             currentMovie.innerHTML = ''
 
             let myMovieImg = document.createElement('img')
+            myMovieImg.id = 'div-movie-img'
             myMovieImg.setAttribute('src', `${data.Poster}`)
             currentMovie.appendChild(myMovieImg)
 
@@ -83,7 +101,37 @@ $(document).ready(function () {
 
     ////function to save movie titles to local storage, to be updated later
     let saveMovieTitle = function (search) {
-        localStorage.setItem(search, []);
+        localStorage.setItem('movieTitleKey', moviesArray);
     }
+
+    let loadMovieTitle = function () {
+        let movieTitles = localStorage.getItem('movieTitleKey') //object.keys
+        return movieTitles
+
+    }
+
+   
+
+
+    let appendMovieHistory = function () {
+        let myMovieSearchHistory = document.createElement('li')
+        myMovieSearchHistory.textContent = loadMovieTitle()
+        movieSearchHistory.appendChild(myMovieSearchHistory)
+
+    }
+
+    appendMovieHistory()
+
+    //let clearMovieHistory = function () {
+      //  localStorage.removeItem('movieTitleKey')
+       // myMovieSearchHistory.textContent = ''
+    //}
+
+    let clearMovieHistory = function () {
+        localStorage.removeItem('movieTitleKey')
+       // myMovieSearchHistory.innerHTML = ''
+    }
+
+    clearHistory.addEventListener('click', clearMovieHistory)
    
 })

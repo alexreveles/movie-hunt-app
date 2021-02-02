@@ -1,10 +1,52 @@
 
 
 body {
-    background-image: url(./images/movie2.jpg);
+    background-image: linear-gradient(rgba(11, 11, 36, 0.5), rgba(28, 103, 95, 0.5)) 
+    ,url(./images/movie2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: 100%;
-    
+}
+
+h1 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 80px;
+}
+a {
+    color:white;
+}
+a:hover {
+color: #20B2AA;
+}
+
+.intro {
+    color:red;
+    display:block;
+    text-align:center;
+    margin-top: 400px;
+}
+
+p {
+    font-size: xx-large;
+    font-family: monospace;
+}
+
+article .para {
+    font-size: xx-large;
+    margin: 15px;
+    text-align: center;
+}
+
+footer {
+    margin: 10px;
+    margin-top: 900px;
+    font-size: x-large;
+    color:rgba(247, 4, 4, 0.906);
+    text-align: center;
+}
+
+div, p {
+    color:#0be4d9;
 }

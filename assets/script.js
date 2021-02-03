@@ -28,7 +28,7 @@ $(document).ready(function () {
         moviesArray.push(searchResult) //movieTitle.textContent
         console.log(moviesArray)
 
-        let myMovieSearchHistory = document.createElement('li')
+        let myMovieSearchHistory = document.createElement('button')
         myMovieSearchHistory.textContent = searchResult
         movieSearchHistory.appendChild(myMovieSearchHistory)
 
@@ -46,7 +46,7 @@ $(document).ready(function () {
     //retries the movie title based on the search, using omdb api
     let getMovieTitle = function (search) {
         fetch(
-            `http://www.omdbapi.com/?apikey=${omdbApiKey}&t=${search}`
+            `https://www.omdbapi.com/?apikey=${omdbApiKey}&t=${search}`
         ).then(function (response) {
             return response.json();
         })
@@ -122,7 +122,7 @@ $(document).ready(function () {
 
         for (let count = 0; count < moviesArray.length; count++) {
 
-            let myMovieSearchHistory = document.createElement('li')
+            let myMovieSearchHistory = document.createElement('button')
             myMovieSearchHistory.textContent = moviesArray[count]
             movieSearchHistory.appendChild(myMovieSearchHistory)
 

@@ -14,13 +14,6 @@
 
 <body>
     <header>
-     
-     <!-- <div id="container-title">
-    
-        <img src="assets/movie-projector.html" width="200" height="200" alt="projector1" >
-        <h1 id="title">Movie Hunt</h1>  
-       <img src="assets/movie-picture.html" width="200" height="200" alt="picture">       
-     </div> -->
 
      <nav>
         <div class="nav-wrapper">
@@ -42,40 +35,15 @@
         
         </div>
         
-       
-       
-       
-       
-        <!-- <div id="container-about-us"> -->
-      
-      <!---- <h2>Hunting for a Movie?</h2>-->
-
-      <!-- <h2>About Application</h2>
-      <p>This application was designed to help users make movie hunting easier.
-             With the search of a title of interest, users are able to quickly view the popularity, rating, and review. </p>
-   
-       </div> -->
-     
-      
-      
-      
-    
     </div>
    
 </header>
    
-   
-   
-   
-   
     <!-- container for search input-->
-   
-   
-   
-    <div class="container ">
+<div id="container">
       
         <!-- container for current movie display-->
-        <div class="movie-history">
+        <div id="movie-history">
           <h2>View your Movie Search History:</h2>
           <button id="clear-history"></button>
           <ul class="movie-history-list">
@@ -87,26 +55,30 @@
         </div>
 
         <!-- Movie container recent searches-->
-        <div class="currentMovie">
+        <div id="currentMovie">
 
         </div>
 
-        
-
-
-
-
-
-    </div>
+    
+    <!-- script for js/jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/script.js"></script>
+    <!-- copy right info -->
 
-    <footer>
-        <div class="bottom-section">
-          <a href="./second.html">Read Our About Me</a><br/>
-          &copy;2021 Movie Hunt App, Inc.
+    <div class="row footer">
+        <div class="col s3">
+        <footer>
+        
+          <a class= ".about"href="./second.html">Read Our About Me</a>
+        
         </div>
-      </footer>
+        <div class="col s3">
+            <p class="ft">&copy;2021 Movie Hunt App, Inc.</p>
+        </div>
+        </footer>
+    </div>
+</div>
+
 </body>
 
 </html>

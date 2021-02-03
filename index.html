@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="./assets/styles.css" rel="stylesheet">
     <title id="movie-start">Movie Hunt App</title>
 
@@ -23,16 +24,24 @@
           </ul>
         </div>
       </nav>
-     
-    <div class="container-header">
+    </header>
+<div id="container">   
+    <div class="card-header"> <!--container-header-->
       
-        <div id="user-form">
-        
+        <div class="col s4" id="user-form">
+            <div class="card">
+            <h1><i class="small material-icons">arrow_downward</i>Search for a Movie</h1>
+            <div class="form-body">
             <label class="form-label" class="search-movie"></label>
             <input name="searchMovie" id="search-movie" type="text" autofocus="true" class="movieAdder"
                 placeholder="Looking for a Movie?" required>
             <button id="search-movie-btn" class="btn"><i class="fa fa-search"></i></button>
-        
+            <h2 class="historyL">Movie Searches:</h2>
+                <ul class="movie-history-list" ></ul> 
+                <button class=" waves-effect waves-teal" id="clear-history"><i class="small material-icons">autorenew</i>
+                    Clear Search</button>
+            </div>
+            </div>
         </div>
         
     </div>
@@ -40,7 +49,7 @@
 </header>
    
     <!-- container for search input-->
-<div id="container">
+
       
         <!-- container for current movie display-->
         <!-- <div id="movie-history">
@@ -48,31 +57,37 @@
           <button id="clear-history"></button>
           <ul class="movie-history-list">
             </ul> -->
+    <div class="container">
+        <main class="flex row justify-space-between">
+            <div class="col s8" id="container ">
+                <!-- <h1 class="historyL">Movie Searches:</h1> -->
+                <div class="flex row justify-space-between">
+                    <div id="currentMovie" >
+                        <div id="movie-history">
 
-            <div class="row" id="container ">
-                <h1 class="historyL">Movie Searches:</h1>
-                <div class="col s12" id="currentMovie"></div>
-                  <div class="col s3" id="movie-history">
-                      
-                    
-                
-                    
-                    
-                    
-                  </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <ul class="movie-history-list" ></ul>
-                    </ul>
-                <button class=" waves-effect waves-teal" id="clear-history"> <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    Clear Search History</i></button>
+            </div>
+        <div class="col s8">
+            <div class="flex row justify-space-between">
+                <div id="currentMovie" class="col">
 
-        </div>
+                </div>
+            </div>
+        </div>  
+                <!-- <ul class="movie-history-list" ></ul> -->
+                    
+                <!-- <button class=" waves-effect waves-teal" id="clear-history"> <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    Clear Search History</i></button> -->
+
+        <!-- </div> maybe delete -->
 
         <!-- Movie container recent searches-->
-        <div id="currentMovie">
+        <!-- <ul class="movie-history-list" ></ul>  -->
+        <!-- <div class=" col l6"id="currentMovie">
 
-        </div>
+        </div> -->
 
     
     <!-- script for js/jquery -->
@@ -80,20 +95,15 @@
     <script src="assets/script.js"></script>
     <!-- copy right info -->
 
-    <div class="row footer">
-        <div class="col s3">
-        <footer>
-        
-          <a class= ".about"href="./second.html">Read Our About Me</a>
-        
-        </div>
-        <div class="col s3">
-            <p class="ft">&copy;2021 Movie Hunt App, Inc.</p>
-        </div>
-        </footer>
+    
+       
     </div>
 </div>
-
+</main>
+    
 </body>
 
+
 </html>
+© 2021 Movie Hunt App, Inc.   
+

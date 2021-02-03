@@ -8,42 +8,26 @@
 body{
     background-color: rgb(80, 78, 78);  
 }
+h1 {
+    font-size: 38px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.card {
+    display: inline;
+}
 
 p{
-    color: white;
-    font-size: smaller;
-    text-align: center;
-    /* width: 100%;
-    height: 73px; */
-    background-color: red;
-    margin: 0%;
-    width: 26%;
-    margin-left: 38%;
+    text-align: center; 
 }
-
-#div-movie-review {
-    color:yellow;
-    margin-left: 13%;
-    background-color: red;
-    margin-left: 39%;
-}
-
-#div-movie-review,  {
-    color:yellow;
-    margin-left: 13%;
-    background-color: red;
-    margin-left: 39%;
-}
-
 
 .nav-wrapper {
     background-color:#20B2AA;
     background-image: linear-gradient(rgba(11, 11, 36, 0.5), rgba(8, 191, 173, 0.5)),
                   url("./images/movie.jpg");
-    
-}
+    }
 
- img{
+  img{
     text-align: center;
     align-items: center;
     color:#20B2AA;;
@@ -51,21 +35,16 @@ p{
     font-size: x-large;
     font-weight: bolder;
     border-style: none;
-    margin-left: 40%;
     display: block;
+    margin-left: 52%;
+    margin-top: -50%;
     
-}
-
-#currentMovie, a {
-    color:red;
-}
-
-
+} 
 
 #currentMovie, p {
     color: white;
-    
-    
+    margin-right: -22%;
+    margin-left: 40%;
 }
 
 #search-movie{
@@ -79,27 +58,22 @@ p{
     color: rgb(250, 241, 241);
     margin: 2px;
     width: 50px;
-    
-}
-
-#movie-history {
-    display: flex;
 }
 
 .historyL {
     font-size: 41px;
-    font-family: monospace;
-    background-color: teal;
-    display: inline-block;
+    font-family: "comic sans ms";
+    display: block;
 }
 
 ul {
-margin: 5%;
-font-size: 300%;
-font-weight: 900;
+    margin: 5%;
+    font-size: 300%;
+    font-weight: 900;
 }
+
 button {
-    color: white;
+    color: white; 
     border-radius: 10px;
     width: 300px;
     white-space: nowrap;
@@ -107,7 +81,6 @@ button {
     margin: 4px;
     margin-left: -59px;
     background-color: teal;
-    
 }
 
  #clear-history {
@@ -115,6 +88,7 @@ button {
     background-color: red;
     height: 54px;
     border-radius: 10px;
+    margin-top: -3%;
 }
 
 #clear-history:hover {
@@ -128,6 +102,10 @@ a {
     color:#20B2AA;
     font-size: x-large;
     font-family: monospace;
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 #currentMovie, a:hover {
@@ -137,18 +115,10 @@ a {
 
 
 
-.footer {
-    color: #20B2AA;
-    text-align: left;
-    margin-top: 50%;
-    align-items: center;
-    font-weight: bold;
-    
-}
 
-.about {
-font-size: xx-large;
-}
+
+
+
 
 
 

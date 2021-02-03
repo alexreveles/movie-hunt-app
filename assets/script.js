@@ -5,7 +5,7 @@ $(document).ready(function () {
     let searchMovieInput = document.querySelector("#search-movie")
     let searchMovieButton = document.querySelector("#search-movie-btn")
 
-    let currentMovie = document.querySelector(".currentMovie")
+    let currentMovie = document.querySelector("#currentMovie")
 
     let movieSearchHistory = document.querySelector(".movie-history-list")
 
@@ -53,7 +53,7 @@ $(document).ready(function () {
         .then(function (data) {
             console.log(data)
 
-            currentMovie.innerHTML = ''
+            currentMovie.innerHTML = '';
 
             let myMovieImg = document.createElement('img')
             myMovieImg.id = 'div-movie-img'

@@ -93,7 +93,7 @@ $(document).ready(function () {
                   console.log(data); //.results[0].link
        
                   let movieReview = document.createElement('a');
-                  movieReview.textContent = `Movie Review from NY Times: ${data.results[0].link.url}`;
+                  movieReview.textContent = `Movie Review from NY Times:`;
                   movieReview.id = 'div-movie-review';
                   movieReview.setAttribute('href', `${data.results[0].link.url}`);
                   currentMovie.appendChild(movieReview);

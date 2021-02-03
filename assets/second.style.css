@@ -17,6 +17,8 @@ h1 {
 a {
     color:white;
 }
+
+
 a:hover {
 color: #20B2AA;
 }
@@ -25,7 +27,7 @@ color: #20B2AA;
     color:red;
     display:block;
     text-align:center;
-    margin-top: 400px;
+    margin-top: 150px;
 }
 
 p {
@@ -49,4 +51,6 @@ footer {
 
 div, p {
     color:#0be4d9;
+    /* margin-right: 34%;
+    margin-left: 32%; */
 }

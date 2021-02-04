@@ -22,10 +22,17 @@ p{
 }
 
 .nav-wrapper {
-    background-color:#20B2AA;
+   
     background-image: linear-gradient(rgba(11, 11, 36, 0.5), rgba(8, 191, 173, 0.5)),
                   url("./images/movie.jpg");
     }
+   
+#div-movie-plot{
+margin-top: 50px;
+}
+
+
+
 
   img{
     text-align: center;
@@ -46,6 +53,9 @@ p{
     margin-right: -22%;
     margin-left: 40%;
 }
+#div-movie-plot{
+margin-top: 50px;
+}
 
 #search-movie{
     width: 20%;
@@ -59,11 +69,17 @@ p{
     margin: 2px;
     width: 50px;
 }
+#nav-mobile{
+    margin-left: 20px;
+    font-size: 100px;
+
+}
 
 .historyL {
     font-size: 41px;
     font-family: "comic sans ms";
     display: block;
+    margin-left: 20px;
 }
 
 ul {
@@ -88,7 +104,8 @@ button {
     background-color: red;
     height: 54px;
     border-radius: 10px;
-    margin-top: -3%;
+   
+  
 }
 
 #clear-history:hover {
@@ -103,6 +120,7 @@ a {
     font-size: x-large;
     font-family: monospace;
     display: flex;
+ 
 
     align-items: flex-end;
     justify-content: flex-end;

@@ -8,6 +8,13 @@
 body{
     background-color: rgb(80, 78, 78);  
 }
+.nav-wrapper {
+   
+    background-image: linear-gradient(rgba(11, 11, 36, 0.5), rgba(8, 191, 173, 0.5)),
+                  url("./images/movie.jpg");
+    text-align: center;
+    }
+   
 h1 {
     font-size: 38px;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -21,20 +28,123 @@ p{
     text-align: center; 
 }
 
-.nav-wrapper {
+#currentMovie, p {
+    color: white;
+    margin-right: -22%;
+    margin-left: 40%;
+    text-align: left;
+}
+.historyL {
+    font-size: 41px;
+    font-family: "comic sans ms";
+    display: block;
+    margin-left: 20px;
    
-    background-image: linear-gradient(rgba(11, 11, 36, 0.5), rgba(8, 191, 173, 0.5)),
-                  url("./images/movie.jpg");
-    }
-   
-#div-movie-plot{
-margin-top: 50px;
+}
+#search-movie{
+    width: 20%;
+    margin-left: 10px;
+    margin-top: 30px;
+    color: white;
+    text-align: center;
 }
 
 
+a {
+    color:#20B2AA;
+    font-size: x-large;
+    font-family: monospace;
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+#currentMovie, a:hover {
+    color:red;
+    font-size: x-larg
+}
+
+#clear-history:hover {
+    margin-left: 10px;
+    background-color: rgba(94, 22, 22, 0.872);
+    height: 54px;
+    border-radius: 10px;
+    text-align: center;
+}
 
 
-  img{
+ #clear-history {
+    margin-left: 10px;
+    background-color: red;
+    height: 54px;
+    border-radius: 10px;
+    text-align: center;
+   
+  
+}
+button {
+    color: white; 
+    border-radius: 10px;
+    width: 300px;
+    white-space: nowrap;
+    display: block;
+    margin: 4px;
+    margin-left: -59px;
+    background-color: teal;
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.btn {
+    color: rgb(250, 241, 241);
+    margin: 2px;
+    width: 50px;
+
+}
+ul {
+     margin: 5%;
+    font-size: 300%;
+    font-weight: 400;
+    text-align: center;
+   
+    margin-left: 5%;
+}
+
+
+img{
+   margin-top: 50Px;
+   margin-left: -40px;
+}
+
+#div-movie-plot{
+margin-top: 50px;
+text-align: center;
+
+}
+#div-movie-review{
+ text-align: center;
+ margin-left: 300px;
+ font-size: 17px;
+
+}
+#movie-history{
+margin-left: 20px;
+
+}
+
+@media screen and (min-width: 768px) {
+
+
+#div-movie-plot{
+margin-top: 50px;
+display: block;
+}
+
+
+img{
     text-align: center;
     align-items: center;
     color:#20B2AA;;
@@ -45,97 +155,117 @@ margin-top: 50px;
     display: block;
     margin-left: 52%;
     margin-top: -50%;
+    text-align: center;
     
 } 
 
-#currentMovie, p {
-    color: white;
-    margin-right: -22%;
-    margin-left: 40%;
-}
-#div-movie-plot{
-margin-top: 50px;
-}
-
-#search-movie{
-    width: 20%;
-    margin-left: 10px;
-    margin-top: 30px;
-    color: white;
-}
 
 .btn {
-    color: rgb(250, 241, 241);
-    margin: 2px;
-    width: 50px;
-}
-#nav-mobile{
-    margin-left: 20px;
-    font-size: 100px;
+  text-align: center;
 
 }
 
-.historyL {
-    font-size: 41px;
-    font-family: "comic sans ms";
-    display: block;
-    margin-left: 20px;
-}
 
-ul {
-    margin: 5%;
-    font-size: 300%;
-    font-weight: 900;
+#movie-history{
+    margin-left: 30px;
 }
 
 button {
-    color: white; 
-    border-radius: 10px;
-    width: 300px;
-    white-space: nowrap;
-    display: block;
-    margin: 4px;
-    margin-left: -59px;
-    background-color: teal;
+
+text-align: center;
 }
 
+
+#search-movie, #currentMovie, p {
+text-align: center;
+
+}
+
+#clear-history {
+    margin-left: 10px;
+    background-color: red;
+    height: 54px;
+    border-radius: 10px;
+    text-align: center;
+ }
+
+
+
+
+}
+@media screen and (max-width: 575px) {
+
+#div-movie-plot{
+ text-align: center;
+ margin-left: -50px;
+}
+
+#div-movie-year{
+
+
+text-align: center;
+ margin-left: -50px;
+}
+#div-movie-rating{
+    
+text-align: center;
+ margin-left: -50px;
+}
+#div-movie-genre{
+  text-align: center;
+ margin-left: -50px;
+}
+#div-movie-review{
+ text-align: center;
+ margin-left: 50px;
+ font-size: 17px;
+}
+
+ul {
+    
+     font-size: 100%;
+    font-weight: 100;
+    text-align: center;
+
+}
+ .historyL {
+    
+    text-align: center;
+    margin-left: -20px;
+}
+.light{
+     text-align: center;
+    margin-left: -20px;
+}
+#search-movie{
+
+    text-align: center;
+    width: 20%;
+    margin-left: 175px;
+}
+.btn {
+    
+text-align: center;
+}
+
+#movie-history{
+margin-left: 10px;
+text-align: center;
+}
+.movie-history-list{
+    text-align: center;
+    margin-left: 150px;
+}
  #clear-history {
     margin-left: 10px;
     background-color: red;
     height: 54px;
     border-radius: 10px;
+    text-align: center;
    
-  
 }
 
-#clear-history:hover {
-    margin-left: 10px;
-    background-color: rgba(94, 22, 22, 0.872);
-    height: 54px;
-    border-radius: 10px;
 }
-
-a {
-    color:#20B2AA;
-    font-size: x-large;
-    font-family: monospace;
-    display: flex;
- 
-
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-#currentMovie, a:hover {
-    color:red;
-    font-size: x-large;
-}
-
-
-
-
-
-
 
 
 

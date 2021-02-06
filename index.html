@@ -37,15 +37,28 @@
                 placeholder="Looking for a Movie?" required>
             <button id="search-movie-btn" class="btn"><i class="fa fa-search"></i></button>
             <h2 class="historyL">Movie Searches:</h2>
-                <ul class="movie-history-list"></ul> 
-                <button class=" waves-effect waves-teal" id="clear-history"><i class="small material-icons">autorenew</i>
+               <div id="movie-history">
+               <ul class="movie-history-list"></ul> 
+   
+                <button class="waves-effect waves-teal" id="clear-history"><i class="small material-icons">autorenew</i>
                     Clear Search</button>
+            
+              </div>
+ 
+
+            
             </div>
             </div>
         </div>
         
     </div>
-   
+
+
+  
+  
+
+
+
 </header>
    
     
@@ -56,21 +69,27 @@
                 <div class="flex row justify-space-between">
                     <div id="currentMovie" >
                         <div id="movie-history">
-
+                        <div class="col s8">
+                            <div class="flex row justify-space-between">
+                                <div id="currentMovie" class="col">
+                        
+                                </div>
+                            </div>
+                       
                         </div>
                     </div>
                 </div>
             </div>
-        <div class="col s8">
+        <div>
+            <div class="col s8">
             <div class="flex row justify-space-between">
                 <div id="currentMovie" class="col">
 
                 </div>
             </div>
         </div>  
-              
-
-    
+        
+  
     <!-- script for js/jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

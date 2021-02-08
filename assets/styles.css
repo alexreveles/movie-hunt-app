@@ -141,6 +141,13 @@ text-align: center;
 margin-left: 20px;
 
 }
+#div-no-result{
+  margin-left: 200px;
+  margin-top: -500px;
+  
+
+}
+
 
 @media screen and (min-width: 768px) {
 
@@ -195,6 +202,12 @@ text-align: center;
     border-radius: 10px;
     text-align: center;
  }
+ #div-no-result{
+text-align: center;
+  
+
+}
+
 
 }
 @media screen and (max-width: 575px) {
@@ -224,7 +237,7 @@ text-align: center;
  margin-left: 50px;
  font-size: 17px;
 }
-
+/*comment*/
 ul {
     
      font-size: 100%;
@@ -268,6 +281,13 @@ text-align: center;
     text-align: center;
    
 }
+#div-no-result{
+  margin-left: -15px;
+  font-size: 20px;
+  margin-top: 75px;
+
+}
+
 
 }
 

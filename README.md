@@ -11,6 +11,9 @@
 
 ![](./assets/images/screenshot1.png) ![](./assets/images/screenshot2.png)
 
+#### Deployed Link: https://alexreveles.github.io/movie-hunt-app/
+
+#### Github Link: https://github.com/alexreveles/movie-hunt-app
 
 ##### Contribution: Alex Reveles, Alex Giannini, & Emily Chhun.
 

@@ -12,8 +12,6 @@ $(document).ready(function () {
 
   let clearHistory = document.querySelector("#clear-history");
 
-  
-
   let moviesArray = []; 
   let test = localStorage.getItem("movieTitleKey");
   moviesArray.push(test);
@@ -21,14 +19,9 @@ $(document).ready(function () {
     // retrieve data from previous buttons created 
   $('.movie-history-list').on("click", 'button', function(event) {
        currentSelectedMovie = $(this).html();
-       console.log(currentSelectedMovie)
        getMovieTitle(currentSelectedMovie);
-      
   });
-  
-
-
-  
+    
   ///add eventListener when user inputs a search
   searchMovieButton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -37,22 +30,12 @@ $(document).ready(function () {
     let movieTitle = document.createElement("p");
     movieTitle.textContent = searchResult;
  
-    
     moviesArray.push(searchResult); 
-    //console.log(moviesArray);
-
-
-    moviesArray.push(searchResult);
-    console.log(moviesArray);
-
 
     let myMovieSearchHistory = document.createElement("button");
-    // myMovieSearchHistory.classList.add('btn');
     myMovieSearchHistory.textContent = searchResult;
     movieSearchHistory.appendChild(myMovieSearchHistory);
-    
     getMovieTitle(movieTitle.textContent);
-
     saveMovieTitle(movieTitle.textContent);
     // clear search input
     $('#search-movie').val('')
@@ -60,17 +43,12 @@ $(document).ready(function () {
 
   //retries the movie title based on the search, using omdb api
   let getMovieTitle = function (search) {
-      
     fetch(`https://www.omdbapi.com/?apikey=${omdbApiKey}&t=${search}`)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
-
-        
-
-
+       
         if (data.Response === 'True') { ///when the user inputs a valid movie search
 
         currentMovie.innerHTML = "";
@@ -111,8 +89,7 @@ $(document).ready(function () {
             return response.json();
           })
           .then(function (data) {
-            console.log(data); 
-
+            
             if (data.results === null) {
              ///this is when the search result has no movie articles available
               let noArticle = document.createElement('p');
@@ -126,26 +103,7 @@ $(document).ready(function () {
             movieReview.id = "div-movie-review";
             movieReview.setAttribute("href", `${data.results[0].link.url}`);
             currentMovie.appendChild(movieReview);
-
-
-
-
-            
-            // let ratingEl = data.currentMovie.rated;
-            // myMovieRating.textContent = ratingEl;
-                // conditional for rating
-            // if( ratingEL === G ) {
-            //   myMovieRating.classList.add('background-color: green;');
-
-            // } else if ( ratingEl === PG ) {
-            //     myMovieRating.classList.add('background-color: yellow;');
-
-            // } else if (ratingEl === PG-13) {
-            //     myMovieRating.classList.add('background-color: red;');
-            // }
-
           }
-
 
           });
 
@@ -175,7 +133,6 @@ $(document).ready(function () {
 
   ///function to actually append the saved movie titles to the screen
   let appendMovieHistory = function () {
-    
     for (let count = 0; count < moviesArray.length; count++) {
       let myMovieSearchHistory = document.createElement("button");
       myMovieSearchHistory.textContent = moviesArray[count];

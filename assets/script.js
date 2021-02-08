@@ -14,7 +14,7 @@ $(document).ready(function () {
 
   
 
-  let moviesArray = []; //localStorage.getItem('movieTitleKey') ///[]
+  let moviesArray = []; 
   let test = localStorage.getItem("movieTitleKey");
   moviesArray.push(test);
 
@@ -36,9 +36,15 @@ $(document).ready(function () {
 
     let movieTitle = document.createElement("p");
     movieTitle.textContent = searchResult;
+ 
     
     moviesArray.push(searchResult); 
     //console.log(moviesArray);
+
+
+    moviesArray.push(searchResult);
+    console.log(moviesArray);
+
 
     let myMovieSearchHistory = document.createElement("button");
     // myMovieSearchHistory.classList.add('btn');
@@ -61,7 +67,12 @@ $(document).ready(function () {
       })
       .then(function (data) {
         console.log(data);
+
         
+
+
+        if (data.Response === 'True') { ///when the user inputs a valid movie search
+
         currentMovie.innerHTML = "";
 
         let myMovieImg = document.createElement("img");
@@ -100,10 +111,17 @@ $(document).ready(function () {
             return response.json();
           })
           .then(function (data) {
-            console.log(data); //.results[0].link
+            console.log(data); 
 
+            if (data.results === null) {
+             ///this is when the search result has no movie articles available
+              let noArticle = document.createElement('p');
+              noArticle.textContent = 'No article available based from your search.';
+              noArticle.id = "div-no-article";
+              currentMovie.appendChild(noArticle);
+
+          } else if (data.results[0]) { ///when the movie search has an article
             let movieReview = document.createElement("a");
-      
             movieReview.textContent = `Movie Review from NY Times:`;
             movieReview.id = "div-movie-review";
             movieReview.setAttribute("href", `${data.results[0].link.url}`);
@@ -111,7 +129,8 @@ $(document).ready(function () {
 
 
 
-            // conditional statement for uv index
+
+            
             // let ratingEl = data.currentMovie.rated;
             // myMovieRating.textContent = ratingEl;
                 // conditional for rating
@@ -125,22 +144,36 @@ $(document).ready(function () {
             //     myMovieRating.classList.add('background-color: red;');
             // }
 
+          }
+
+
           });
+
+        }
+        else {
+          ///when the user inputs an invalid movie search
+          currentMovie.innerHTML = '';
+          let noResult = document.createElement('h3');
+          noResult.textContent = "No results based on your search. Please try again.";
+          noResult.id = "div-no-result";
+          currentMovie.appendChild(noResult);
+
+        }
       });
       
   };
 
-  ////function to save movie titles to local storage, to be updated later
+  ////function to save movie titles to local storage
   let saveMovieTitle = function (search) {
     localStorage.setItem("movieTitleKey", JSON.stringify(moviesArray));
   };
 
+  ///function to load movie titles
   let loadMovieTitle = function () {
-    moviesArray = JSON.parse(localStorage.getItem("movieTitleKey")) || []; //object.keys
-
-    // return movieTitles
+    moviesArray = JSON.parse(localStorage.getItem("movieTitleKey")) || [];
   };
 
+  ///function to actually append the saved movie titles to the screen
   let appendMovieHistory = function () {
     
     for (let count = 0; count < moviesArray.length; count++) {
@@ -148,24 +181,19 @@ $(document).ready(function () {
       myMovieSearchHistory.textContent = moviesArray[count];
       movieSearchHistory.appendChild(myMovieSearchHistory);
     }
-    //let myMovieSearchHistory = document.createElement('li')
-    //   myMovieSearchHistory.textContent = loadMovieTitle()
-    ///  movieSearchHistory.appendChild(myMovieSearchHistory)
+
   };
 
+  ///calling these two functions on every page load
   loadMovieTitle();
   appendMovieHistory();
 
-  //let clearMovieHistory = function () {
-  //  localStorage.removeItem('movieTitleKey')
-  // myMovieSearchHistory.textContent = ''
-  //}
-
-  //let movieSearchHistory = document.querySelector(".movie-history-list")
+  //function to clear movie history
   let clearMovieHistory = function () {
     localStorage.removeItem("movieTitleKey");
     movieSearchHistory.innerHTML = "";
   };
 
+  ///clear history button whenever it is clicked.
   clearHistory.addEventListener("click", clearMovieHistory);
 });

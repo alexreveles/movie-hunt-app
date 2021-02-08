@@ -98,12 +98,19 @@ button {
 
 }
 
+button:hover {
+    background-color: yellowgreen;
+    color: white;
+}
+
+
 .btn {
     color: rgb(250, 241, 241);
     margin: 2px;
     width: 50px;
-
 }
+
+
 ul {
      margin: 5%;
     font-size: 300%;
@@ -188,9 +195,6 @@ text-align: center;
     border-radius: 10px;
     text-align: center;
  }
-
-
-
 
 }
 @media screen and (max-width: 575px) {

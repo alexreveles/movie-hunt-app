@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
   const omdbApiKey = "382c68b3";
   const nyTimesApiKey = "r7DoTIKRHJVeJcAn7wGvTFoc3EDJSEAA";
 
@@ -11,12 +12,23 @@ $(document).ready(function () {
 
   let clearHistory = document.querySelector("#clear-history");
 
-  let myMovieSearchHistory;
+  
 
   let moviesArray = []; //localStorage.getItem('movieTitleKey') ///[]
   let test = localStorage.getItem("movieTitleKey");
   moviesArray.push(test);
 
+    // retrieve data from previous buttons created 
+  $('.movie-history-list').on("click", 'button', function(event) {
+       currentSelectedMovie = $(this).html();
+       console.log(currentSelectedMovie)
+       getMovieTitle(currentSelectedMovie);
+      
+  });
+  
+
+
+  
   ///add eventListener when user inputs a search
   searchMovieButton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -24,28 +36,32 @@ $(document).ready(function () {
 
     let movieTitle = document.createElement("p");
     movieTitle.textContent = searchResult;
-
-    moviesArray.push(searchResult); //movieTitle.textContent
-    console.log(moviesArray);
+    
+    moviesArray.push(searchResult); 
+    //console.log(moviesArray);
 
     let myMovieSearchHistory = document.createElement("button");
+    // myMovieSearchHistory.classList.add('btn');
     myMovieSearchHistory.textContent = searchResult;
     movieSearchHistory.appendChild(myMovieSearchHistory);
-
+    
     getMovieTitle(movieTitle.textContent);
 
     saveMovieTitle(movieTitle.textContent);
-  });
+    // clear search input
+    $('#search-movie').val('')
+});
 
   //retries the movie title based on the search, using omdb api
   let getMovieTitle = function (search) {
+      
     fetch(`https://www.omdbapi.com/?apikey=${omdbApiKey}&t=${search}`)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
         console.log(data);
-
+        
         currentMovie.innerHTML = "";
 
         let myMovieImg = document.createElement("img");
@@ -74,6 +90,7 @@ $(document).ready(function () {
         myMovieGenre.id = "div-movie-genre";
         currentMovie.appendChild(myMovieGenre);
 
+
         ///created another fetch call to display movie review from NY times API
 
         fetch(
@@ -91,8 +108,26 @@ $(document).ready(function () {
             movieReview.id = "div-movie-review";
             movieReview.setAttribute("href", `${data.results[0].link.url}`);
             currentMovie.appendChild(movieReview);
+
+
+
+            // conditional statement for uv index
+            // let ratingEl = data.currentMovie.rated;
+            // myMovieRating.textContent = ratingEl;
+                // conditional for rating
+            // if( ratingEL === G ) {
+            //   myMovieRating.classList.add('background-color: green;');
+
+            // } else if ( ratingEl === PG ) {
+            //     myMovieRating.classList.add('background-color: yellow;');
+
+            // } else if (ratingEl === PG-13) {
+            //     myMovieRating.classList.add('background-color: red;');
+            // }
+
           });
       });
+      
   };
 
   ////function to save movie titles to local storage, to be updated later
@@ -107,6 +142,7 @@ $(document).ready(function () {
   };
 
   let appendMovieHistory = function () {
+    
     for (let count = 0; count < moviesArray.length; count++) {
       let myMovieSearchHistory = document.createElement("button");
       myMovieSearchHistory.textContent = moviesArray[count];

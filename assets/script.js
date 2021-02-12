@@ -61,7 +61,7 @@ $(document).ready(function () {
         let myMoviePlot = document.createElement("p");
         myMoviePlot.textContent = `Plot: ${data.Plot}`;
         myMoviePlot.id = "div-movie-plot";
-        console.log(myMoviePlot.id);
+        
         currentMovie.appendChild(myMoviePlot);
 
         let myMovieYear = document.createElement("p");
